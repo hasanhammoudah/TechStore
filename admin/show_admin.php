@@ -98,9 +98,9 @@ include "handlers/get_admins.php";
                                         <button type="button" data-id="<?= $admin['0']  ?>" class="btn btn-primary edit-admin" data-toggle="modal" data-target="#exampleModal">
                                             <i data-id="<?= $admin['0']  ?>" class="fas fa-edit"></i>
                                         </button>
-                                        <a class="btn btn-danger" title="delete data" data-toggle="tooltip" data-placement="top">
-                                            <i class="fas fa-trash"></i>
-                                        </a>
+                                        <button data-id="<?= $admin['0']  ?>" class="btn btn-danger delete-admin" title="delete data" data-toggle="tooltip" data-placement="top">
+                                            <i data-id="<?= $admin['0']  ?>" class="fas fa-trash"></i>
+                                        </button>
                                     </td>
 
                                 </tr>
@@ -138,8 +138,6 @@ include "handlers/get_admins.php";
         </div>
     </div>
 </div>
-</div>
-</aside>
 
 <?php include "include/footer.php";   ?>
 
@@ -149,7 +147,9 @@ include "handlers/get_admins.php";
         e.preventDefault(e);
         let element = e.target;
         let id = element.getAttribute('data-id');
-        console.log(id);
+        //console.log(id);
+
+
 
 
 
@@ -167,6 +167,50 @@ include "handlers/get_admins.php";
                 console.log(data);
             },
         });
+
+    });
+
+
+
+    $(".delete-admin").click(function(e) {
+        e.preventDefault();
+        let element = e.target;
+        let id = element.getAttribute('data-id');
+        //console.log(id);
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                            type: "post",
+                            url: "delete_admin_data.php",
+                            dataType: "json",
+                            data: {
+                                id: id
+                            },
+                            success: function(data) {
+                           $(`button[data-id=${data}]`).closest("tr").remove();
+                            // $("#id").val(data.id);
+                            //$("#adminName").val(data.name);
+                            // $("#adminEmail").val(data.email);
+                            Swal.fire(
+                                'Deleted!',
+                                'Your file has been deleted.',
+                                'success'
+                            )
+
+
+                        },
+                    });
+            }
+        })
+
 
     });
 </script>

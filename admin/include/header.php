@@ -19,6 +19,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Theme style -->
     <link rel="stylesheet" href="assets/css/adminlte.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.0.0/sweetalert2.min.css" integrity="sha512-cIz+hC6LZDmWP7WRHbUMCfwpV/mbNhQgkvjWqoZJcW/CjZD++LmMbnDScsBLsPqng2KToa7bvXKciX5orF+NYg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body class="hold-transition sidebar-mini">

@@ -62,6 +62,8 @@
 <script src="assets/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
 <script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <!-- AdminLTE App -->
 <script src="assets/js/adminlte.min.js"></script>
 <script src="assets/js/custome.js"></script>

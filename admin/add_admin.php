@@ -91,6 +91,7 @@ include "start_content.php";
     </div>
     <!-- /.content -->
 </div>
+</div>
 
 
 <?php
